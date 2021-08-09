@@ -1,0 +1,15 @@
+body {
+	background-color: #f7fafc;
+}
+
+#__next {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 16px;
+}
+
+@tailwind components;
+@tailwind utilities;
