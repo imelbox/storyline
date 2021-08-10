@@ -1,3 +1,4 @@
+import Counter from '../components/Counter';
 export default function IndexPage() {
 	return (
 		<div className="page bg-gray-200">
@@ -6,6 +7,8 @@ export default function IndexPage() {
 			<p>
 				It is a good place to put a short description of your project.
 			</p>
+			<hr />
+			<Counter />
 		</div>
 	);
 }
