@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Button } from '@chakra-ui/button';
+import { Button, IconButton } from '@chakra-ui/button';
 import { HStack } from '@chakra-ui/layout';
 import {
 	NumberDecrementStepper,
@@ -10,6 +10,8 @@ import {
 } from '@chakra-ui/number-input';
 
 import useStore from '../store/index';
+import { mdiMinus, mdiPlus } from '@mdi/js';
+import Icon from './Icon';
 
 export default function Counter() {
 	const { counter, inc, dec } = useStore();
@@ -21,7 +23,13 @@ export default function Counter() {
 		<div className="p-4 text-lg bg-green-50 text-blue-900">
 			<HStack>
 				<p className="block min-w-[30%] flex-1">Counter: {counter}</p>
-				<Button onClick={() => inc(counterValue)}>+</Button>
+
+				<IconButton
+					aria-label="Increment the counter"
+					icon={<Icon path={mdiPlus} />}
+					onClick={() => inc(counterValue)}
+				/>
+
 				<NumberInput
 					maxW="84px"
 					mr="2rem"
@@ -34,7 +42,11 @@ export default function Counter() {
 						<NumberDecrementStepper />
 					</NumberInputStepper>
 				</NumberInput>
-				<Button onClick={() => dec(counterValue)}>-</Button>
+				<IconButton
+					aria-label="Increment the counter"
+					icon={<Icon path={mdiMinus} />}
+					onClick={() => dec(counterValue)}
+				/>
 			</HStack>
 		</div>
 	);
