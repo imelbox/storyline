@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import '../styles/index.scss';
 
+import { appWithTranslation } from 'next-i18next';
+
 const App = ({ Component, pageProps }) => {
 	return (
 		<ChakraProvider>
@@ -19,4 +21,4 @@ const App = ({ Component, pageProps }) => {
 	);
 };
 
-export default App;
+export default appWithTranslation(App);
